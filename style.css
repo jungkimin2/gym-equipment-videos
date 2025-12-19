@@ -302,6 +302,7 @@ header {
 /* Category-Specific Colors */
 /* 하체 (Lower Body) - Green */
 .toggle-section:nth-child(1) {
+    background: linear-gradient(135deg, rgba(123, 228, 149, 0.08), rgba(157, 243, 196, 0.05));
     border-color: rgba(123, 228, 149, 0.3);
 }
 
@@ -334,6 +335,7 @@ header {
 
 /* 등 (Back) - Blue */
 .toggle-section:nth-child(2) {
+    background: linear-gradient(135deg, rgba(107, 182, 255, 0.08), rgba(157, 201, 255, 0.05));
     border-color: rgba(107, 182, 255, 0.3);
 }
 
@@ -366,6 +368,7 @@ header {
 
 /* 가슴 (Chest) - Pink */
 .toggle-section:nth-child(3) {
+    background: linear-gradient(135deg, rgba(255, 107, 157, 0.08), rgba(255, 179, 198, 0.05));
     border-color: rgba(255, 107, 157, 0.3);
 }
 
@@ -398,6 +401,7 @@ header {
 
 /* 어깨 (Shoulder) - Orange */
 .toggle-section:nth-child(4) {
+    background: linear-gradient(135deg, rgba(255, 184, 108, 0.08), rgba(255, 209, 155, 0.05));
     border-color: rgba(255, 184, 108, 0.3);
 }
 
@@ -430,6 +434,7 @@ header {
 
 /* 팔 (Arms) - Purple */
 .toggle-section:nth-child(5) {
+    background: linear-gradient(135deg, rgba(189, 147, 249, 0.08), rgba(212, 191, 252, 0.05));
     border-color: rgba(189, 147, 249, 0.3);
 }
 
@@ -462,6 +467,7 @@ header {
 
 /* 기타 (Others) - Cyan */
 .toggle-section:nth-child(6) {
+    background: linear-gradient(135deg, rgba(139, 233, 253, 0.08), rgba(196, 245, 254, 0.05));
     border-color: rgba(139, 233, 253, 0.3);
 }
 
