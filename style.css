@@ -1,0 +1,507 @@
+/* 바키짐 운동 가이드 - 다크/그린 테마 */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans KR', sans-serif;
+  background: linear-gradient(135deg, #0A0F0D 0%, #1a2f1a 100%);
+  color: #fff;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* 헤더 */
+header {
+  background: rgba(0, 0, 0, 0.8);
+  border-bottom: 2px solid #7BE495;
+  padding: 20px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #7BE495;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #7BE495;
+}
+
+/* 컨테이너 */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* 페이지 제목 */
+.page-title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.page-title h1 {
+  font-size: 2.5rem;
+  color: #7BE495;
+  margin-bottom: 10px;
+}
+
+.page-title p {
+  font-size: 1.2rem;
+  color: #ccc;
+}
+
+/* 카테고리 섹션 */
+.category-section {
+  margin-bottom: 60px;
+}
+
+.category-title {
+  font-size: 2rem;
+  color: #7BE495;
+  margin-bottom: 30px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #7BE495;
+}
+
+/* 기구 그리드 */
+.equipment-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.equipment-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid transparent;
+  border-radius: 12px;
+  padding: 25px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.equipment-card:hover {
+  background: rgba(123, 228, 149, 0.1);
+  border-color: #7BE495;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(123, 228, 149, 0.2);
+}
+
+.equipment-card h3 {
+  font-size: 1.4rem;
+  color: #7BE495;
+  margin-bottom: 10px;
+}
+
+.equipment-card .target {
+  font-size: 0.95rem;
+  color: #9DF3C4;
+  margin-bottom: 8px;
+}
+
+.equipment-card .category-tag {
+  display: inline-block;
+  padding: 4px 12px;
+  background: rgba(123, 228, 149, 0.2);
+  border-radius: 20px;
+  font-size: 0.85rem;
+  color: #7BE495;
+  margin-top: 10px;
+}
+
+/* 개별 기구 페이지 */
+.equipment-detail {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.equipment-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.equipment-header h1 {
+  font-size: 2.8rem;
+  color: #7BE495;
+  margin-bottom: 15px;
+}
+
+.equipment-header .target-muscle {
+  font-size: 1.3rem;
+  color: #9DF3C4;
+  margin-bottom: 10px;
+}
+
+.equipment-header .sets-info {
+  font-size: 1.1rem;
+  color: #ccc;
+  padding: 10px 20px;
+  background: rgba(123, 228, 149, 0.1);
+  border-radius: 8px;
+  display: inline-block;
+}
+
+/* 비디오 플레이어 */
+.video-container {
+  margin: 40px 0;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 2px solid #7BE495;
+  background: #000;
+}
+
+.video-container video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 운동 방법 섹션 */
+.section {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 30px;
+  margin-bottom: 30px;
+  border-left: 4px solid #7BE495;
+}
+
+.section-title {
+  font-size: 1.8rem;
+  color: #7BE495;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.steps-list {
+  list-style: none;
+  counter-reset: step-counter;
+}
+
+.steps-list li {
+  counter-increment: step-counter;
+  margin-bottom: 15px;
+  padding-left: 45px;
+  position: relative;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.steps-list li:before {
+  content: counter(step-counter);
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: #7BE495;
+  color: #0A0F0D;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+/* 주의사항 */
+.caution-item {
+  background: rgba(255, 193, 7, 0.1);
+  border-left: 4px solid #ffc107;
+  padding: 15px 20px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  font-size: 1.05rem;
+}
+
+/* 팁 */
+.tip-item {
+  background: rgba(123, 228, 149, 0.1);
+  border-left: 4px solid #7BE495;
+  padding: 15px 20px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  font-size: 1.05rem;
+}
+
+/* 버튼 */
+.btn {
+  display: inline-block;
+  padding: 12px 30px;
+  background: #7BE495;
+  color: #0A0F0D;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: all 0.3s;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #9DF3C4;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(123, 228, 149, 0.3);
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border: 2px solid #7BE495;
+}
+
+.btn-secondary:hover {
+  background: rgba(123, 228, 149, 0.2);
+}
+
+/* 네비게이션 버튼 */
+.navigation-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 50px;
+}
+
+/* 푸터 */
+footer {
+  background: rgba(0, 0, 0, 0.8);
+  border-top: 2px solid #7BE495;
+  padding: 40px 0;
+  margin-top: 80px;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.footer-content p {
+  color: #ccc;
+  margin-bottom: 10px;
+}
+
+.footer-content a {
+  color: #7BE495;
+  text-decoration: none;
+}
+
+.footer-content a:hover {
+  color: #9DF3C4;
+}
+
+/* 토글 컨테이너 */
+.toggles-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* 토글 섹션 */
+.toggle-section {
+  margin-bottom: 15px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 2px solid rgba(123, 228, 149, 0.3);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.toggle-header {
+  width: 100%;
+  padding: 20px 25px;
+  background: rgba(255, 255, 255, 0.05);
+  border: none;
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s;
+}
+
+.toggle-header:hover {
+  background: rgba(123, 228, 149, 0.1);
+  color: #7BE495;
+}
+
+.toggle-header.active {
+  background: rgba(123, 228, 149, 0.15);
+  color: #7BE495;
+  border-bottom: 2px solid #7BE495;
+}
+
+.toggle-header.active span:first-child::before {
+  content: '▼ ';
+}
+
+.toggle-header .count {
+  font-size: 0.9rem;
+  color: #9DF3C4;
+  background: rgba(123, 228, 149, 0.2);
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+/* 토글 콘텐츠 */
+.toggle-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-out;
+}
+
+.toggle-content.active {
+  max-height: 2000px;
+  transition: max-height 0.6s ease-in;
+}
+
+/* 기구 목록 */
+.equipment-list {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 12px;
+}
+
+.equipment-item {
+  padding: 15px 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.equipment-item:hover {
+  background: rgba(123, 228, 149, 0.1);
+  border-color: #7BE495;
+  transform: translateX(5px);
+}
+
+.equipment-icon {
+  font-size: 1.4rem;
+}
+
+.equipment-name {
+  font-size: 1.05rem;
+  color: #fff;
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+  .page-title h1 {
+    font-size: 2rem;
+  }
+
+  .equipment-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .equipment-list {
+    grid-template-columns: 1fr;
+  }
+
+  .equipment-header h1 {
+    font-size: 2rem;
+  }
+
+  .section {
+    padding: 20px;
+  }
+
+  .steps-list li {
+    font-size: 1rem;
+    padding-left: 40px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .navigation-buttons {
+    flex-direction: column;
+  }
+
+  .toggle-header {
+    font-size: 1.1rem;
+    padding: 15px 20px;
+  }
+}
+
+/* 로딩 애니메이션 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.equipment-card,
+.section {
+  animation: fadeIn 0.6s ease-out;
+}
+
+/* 스크롤바 커스텀 */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0A0F0D;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #7BE495;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9DF3C4;
+}

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="바키짐 김포점 운동 기구 사용법 가이드 - 34개 운동 기구 영상 및 상세 설명">
+    <title>바키짐 김포점 - 운동 기구 사용법 가이드</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo" onclick="showHome()">
+                🏋️ 바키짐 김포점
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#" onclick="showHome()">홈</a></li>
+                    <li><a href="#lower-body">하체</a></li>
+                    <li><a href="#back">등</a></li>
+                    <li><a href="#chest">가슴</a></li>
+                    <li><a href="#shoulder">어깨</a></li>
+                    <li><a href="#arms">팔</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- 홈 화면 -->
+        <div id="home-view">
+            <div class="page-title">
+                <h1>🏋️ 바키짐 김포점</h1>
+                <p>"스마트 하게, 함께 하는 피트니스"</p>
+                <p style="font-size: 1.1rem; margin-top: 20px;">✅ 하단의 토글을 클릭하세요</p>
+            </div>
+
+            <!-- 토글 섹션 -->
+            <div class="toggles-container">
+                <!-- 하체 -->
+                <div class="toggle-section">
+                    <button class="toggle-header" onclick="toggleCategory('lower-body')">
+                        <span>▶ 하체</span>
+                        <span class="count">12개</span>
+                    </button>
+                    <div id="lower-body-list" class="toggle-content">
+                        <div class="equipment-list" id="lower-body-items"></div>
+                    </div>
+                </div>
+
+                <!-- 등 -->
+                <div class="toggle-section">
+                    <button class="toggle-header" onclick="toggleCategory('back')">
+                        <span>▶ 등</span>
+                        <span class="count">11개</span>
+                    </button>
+                    <div id="back-list" class="toggle-content">
+                        <div class="equipment-list" id="back-items"></div>
+                    </div>
+                </div>
+
+                <!-- 가슴 -->
+                <div class="toggle-section">
+                    <button class="toggle-header" onclick="toggleCategory('chest')">
+                        <span>▶ 가슴</span>
+                        <span class="count">4개</span>
+                    </button>
+                    <div id="chest-list" class="toggle-content">
+                        <div class="equipment-list" id="chest-items"></div>
+                    </div>
+                </div>
+
+                <!-- 어깨 -->
+                <div class="toggle-section">
+                    <button class="toggle-header" onclick="toggleCategory('shoulder')">
+                        <span>▶ 어깨</span>
+                        <span class="count">3개</span>
+                    </button>
+                    <div id="shoulder-list" class="toggle-content">
+                        <div class="equipment-list" id="shoulder-items"></div>
+                    </div>
+                </div>
+
+                <!-- 팔 -->
+                <div class="toggle-section">
+                    <button class="toggle-header" onclick="toggleCategory('arms')">
+                        <span>▶ 팔</span>
+                        <span class="count">3개</span>
+                    </button>
+                    <div id="arms-list" class="toggle-content">
+                        <div class="equipment-list" id="arms-items"></div>
+                    </div>
+                </div>
+
+                <!-- 기타 -->
+                <div class="toggle-section">
+                    <button class="toggle-header" onclick="toggleCategory('others')">
+                        <span>▶ 🌊 운동 강도와 영양섭취</span>
+                        <span class="count">1개</span>
+                    </button>
+                    <div id="others-list" class="toggle-content">
+                        <div class="equipment-list" id="others-items"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 주의사항 -->
+            <div class="section" style="margin-top: 50px;">
+                <h2 class="section-title">🔑 운동 시작 전 주의사항</h2>
+                <ul style="list-style: none; padding-left: 0;">
+                    <li style="margin-bottom: 10px;">• 항상 준비운동으로 시작하세요</li>
+                    <li style="margin-bottom: 10px;">• 올바른 자세로 운동하는 것이 중요합니다</li>
+                    <li style="margin-bottom: 10px;">• 무리하지 말고 점진적으로 난이도를 올려가세요</li>
+                    <li style="margin-bottom: 10px;">• 충분한 휴식과 수분 섭취를 잊지 마세요</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 기구 상세 화면 -->
+        <div id="detail-view" style="display: none;">
+            <div class="equipment-detail">
+                <!-- 뒤로가기 버튼 -->
+                <div style="margin-bottom: 20px;">
+                    <button onclick="showHome()" class="btn btn-secondary">← 목록으로 돌아가기</button>
+                </div>
+
+                <!-- 기구 헤더 -->
+                <div class="equipment-header">
+                    <h1 id="detail-name"></h1>
+                    <p class="target-muscle" id="detail-target"></p>
+                    <span class="sets-info" id="detail-sets"></span>
+                </div>
+
+                <!-- 비디오 -->
+                <div class="video-container">
+                    <video id="detail-video" controls preload="metadata">
+                        브라우저가 비디오를 지원하지 않습니다.
+                    </video>
+                </div>
+
+                <!-- 운동 방법 -->
+                <section class="section">
+                    <h2 class="section-title">💡 운동 방법</h2>
+                    <ol class="steps-list" id="detail-steps"></ol>
+                </section>
+
+                <!-- 주의사항 -->
+                <section class="section">
+                    <h2 class="section-title">⚠️ 주의사항</h2>
+                    <div id="detail-cautions"></div>
+                </section>
+
+                <!-- 운동 팁 -->
+                <section class="section">
+                    <h2 class="section-title">📌 운동 팁</h2>
+                    <div id="detail-tips"></div>
+                </section>
+
+                <!-- 네비게이션 -->
+                <div class="navigation-buttons">
+                    <button onclick="showHome()" class="btn btn-secondary">← 목록으로 돌아가기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>🏋️ 바키짐 김포점 운동 가이드</p>
+            <p>궁금한 사항이 있으시면 언제든지 트레이너에게 문의하세요!</p>
+            <p><a href="https://github.com/jungkimin2/gym-equipment-videos" target="_blank">GitHub</a> | 2025</p>
+        </div>
+    </footer>
+
+    <script>
+        let equipmentData = [];
+
+        // JSON 데이터 로드
+        fetch('equipment_data.json')
+            .then(response => response.json())
+            .then(data => {
+                equipmentData = data.equipment;
+                renderEquipmentLists();
+                handleHashChange();
+            })
+            .catch(error => console.error('데이터 로드 실패:', error));
+
+        // 카테고리별 기구 목록 렌더링
+        function renderEquipmentLists() {
+            const categories = {
+                '하체': 'lower-body',
+                '등': 'back',
+                '가슴': 'chest',
+                '어깨': 'shoulder',
+                '팔': 'arms',
+                '기타': 'others'
+            };
+
+            Object.entries(categories).forEach(([categoryName, categoryId]) => {
+                const container = document.getElementById(`${categoryId}-items`);
+                const items = equipmentData.filter(eq => eq.category === categoryName);
+
+                items.forEach(equipment => {
+                    const item = document.createElement('div');
+                    item.className = 'equipment-item';
+                    item.innerHTML = `
+                        <span class="equipment-icon">💪</span>
+                        <span class="equipment-name">${equipment.name}</span>
+                    `;
+                    item.onclick = () => showEquipmentDetail(equipment.id);
+                    container.appendChild(item);
+                });
+            });
+        }
+
+        // 토글 열기/닫기
+        function toggleCategory(categoryId) {
+            const content = document.getElementById(`${categoryId}-list`);
+            const header = content.previousElementSibling;
+
+            // 다른 토글들은 닫기
+            document.querySelectorAll('.toggle-content').forEach(toggle => {
+                if (toggle.id !== `${categoryId}-list`) {
+                    toggle.classList.remove('active');
+                    toggle.previousElementSibling.classList.remove('active');
+                }
+            });
+
+            // 현재 토글 열기/닫기
+            content.classList.toggle('active');
+            header.classList.toggle('active');
+        }
+
+        // 기구 상세 표시
+        function showEquipmentDetail(equipmentId) {
+            const equipment = equipmentData.find(eq => eq.id === equipmentId);
+            if (!equipment) return;
+
+            // URL 해시 업데이트 (NFC 태그 지원)
+            window.location.hash = equipmentId;
+
+            // 상세 정보 업데이트
+            document.getElementById('detail-name').textContent = equipment.name;
+            document.getElementById('detail-target').textContent = `🎯 ${equipment.target}`;
+            document.getElementById('detail-sets').textContent = `📊 ${equipment.sets}`;
+
+            // 비디오
+            const video = document.getElementById('detail-video');
+            video.src = equipment.video;
+
+            // 운동 방법
+            const stepsList = document.getElementById('detail-steps');
+            stepsList.innerHTML = equipment.steps.map(step =>
+                `<li>${step}</li>`
+            ).join('');
+
+            // 주의사항
+            const cautionsDiv = document.getElementById('detail-cautions');
+            cautionsDiv.innerHTML = equipment.cautions.map(caution =>
+                `<div class="caution-item">${caution}</div>`
+            ).join('');
+
+            // 팁
+            const tipsDiv = document.getElementById('detail-tips');
+            tipsDiv.innerHTML = equipment.tips.map(tip =>
+                `<div class="tip-item">${tip}</div>`
+            ).join('');
+
+            // 화면 전환
+            document.getElementById('home-view').style.display = 'none';
+            document.getElementById('detail-view').style.display = 'block';
+
+            // 페이지 상단으로 스크롤
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // 홈 화면 표시
+        function showHome() {
+            window.location.hash = '';
+            document.getElementById('home-view').style.display = 'block';
+            document.getElementById('detail-view').style.display = 'none';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // URL 해시 변경 처리 (NFC 태그 지원)
+        function handleHashChange() {
+            const hash = window.location.hash.substring(1);
+            if (hash) {
+                const equipment = equipmentData.find(eq => eq.id === hash);
+                if (equipment) {
+                    showEquipmentDetail(hash);
+                }
+            }
+        }
+
+        // 해시 변경 이벤트 리스너
+        window.addEventListener('hashchange', handleHashChange);
+    </script>
+</body>
+</html>
