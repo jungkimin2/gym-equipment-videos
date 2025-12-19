@@ -1,0 +1,46 @@
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+
+# Adobe Premiere Pro files
+*.prproj
+Adobe Premiere Pro Auto-Save/
+
+# Original video folders (exclude from git, only include compressed videos)
+v스쿼트/
+래터럴 로우/
+래터럴 로우원암/
+레그익스텐션/
+레그컬/
+렛플다운/
+머신숄더프레스/
+서핑머신/
+스쿼트&카프레이즈/
+스탠딩 아웃타이/
+스탠딩 친업&딥스머신/
+시티드 딥스머신/
+시티드 레그프레스/
+시티드 로우머신/
+시티드 인클라인 체스트 프레스/
+시티드 체스트 프레스/
+시티드 케이블로우/
+아웃타이링크/
+와이드리어 렛풀다운,원암/
+이너아웃/
+인클라인 프레스 플레이티드/
+투웨이로우/
+파워레그프레스/
+팩트롤플라이/
+플레이티드 숄더프레스/
+하이로우,원암/
+힙쓰러스트/
+
+# Compression script
+compress_videos.sh
+
+# Image files
+*.png
