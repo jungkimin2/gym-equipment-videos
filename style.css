@@ -316,6 +316,10 @@ header {
     background: linear-gradient(180deg, var(--color-lower-body), #9DF3C4);
 }
 
+.toggle-section:nth-child(1) .toggle-header {
+    color: var(--color-lower-body);
+}
+
 .toggle-section:nth-child(1) .toggle-header:hover {
     background: linear-gradient(135deg, rgba(123, 228, 149, 0.25), rgba(157, 243, 196, 0.15));
 }
@@ -348,6 +352,10 @@ header {
 
 .toggle-section:nth-child(2) .toggle-header::before {
     background: linear-gradient(180deg, var(--color-back), #9DC9FF);
+}
+
+.toggle-section:nth-child(2) .toggle-header {
+    color: var(--color-back);
 }
 
 .toggle-section:nth-child(2) .toggle-header:hover {
@@ -384,6 +392,10 @@ header {
     background: linear-gradient(180deg, var(--color-chest), #FFB3C6);
 }
 
+.toggle-section:nth-child(3) .toggle-header {
+    color: var(--color-chest);
+}
+
 .toggle-section:nth-child(3) .toggle-header:hover {
     background: linear-gradient(135deg, rgba(255, 107, 157, 0.25), rgba(255, 179, 198, 0.15));
 }
@@ -416,6 +428,10 @@ header {
 
 .toggle-section:nth-child(4) .toggle-header::before {
     background: linear-gradient(180deg, var(--color-shoulder), #FFD19B);
+}
+
+.toggle-section:nth-child(4) .toggle-header {
+    color: var(--color-shoulder);
 }
 
 .toggle-section:nth-child(4) .toggle-header:hover {
@@ -452,6 +468,10 @@ header {
     background: linear-gradient(180deg, var(--color-arms), #D4BFFC);
 }
 
+.toggle-section:nth-child(5) .toggle-header {
+    color: var(--color-arms);
+}
+
 .toggle-section:nth-child(5) .toggle-header:hover {
     background: linear-gradient(135deg, rgba(189, 147, 249, 0.25), rgba(212, 191, 252, 0.15));
 }
@@ -484,6 +504,10 @@ header {
 
 .toggle-section:nth-child(6) .toggle-header::before {
     background: linear-gradient(180deg, var(--color-others), #C4F5FE);
+}
+
+.toggle-section:nth-child(6) .toggle-header {
+    color: var(--color-others);
 }
 
 .toggle-section:nth-child(6) .toggle-header:hover {
