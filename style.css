@@ -17,6 +17,20 @@
     --text-primary: #FFFFFF;
     --text-secondary: #B8E6C9;
     --shadow-glow: 0 0 30px var(--primary-glow);
+
+    /* Category Colors */
+    --color-lower-body: #7BE495;
+    --color-lower-body-glow: rgba(123, 228, 149, 0.5);
+    --color-back: #6BB6FF;
+    --color-back-glow: rgba(107, 182, 255, 0.5);
+    --color-chest: #FF6B9D;
+    --color-chest-glow: rgba(255, 107, 157, 0.5);
+    --color-shoulder: #FFB86C;
+    --color-shoulder-glow: rgba(255, 184, 108, 0.5);
+    --color-arms: #BD93F9;
+    --color-arms-glow: rgba(189, 147, 249, 0.5);
+    --color-others: #8BE9FD;
+    --color-others-glow: rgba(139, 233, 253, 0.5);
 }
 
 body {
@@ -283,6 +297,199 @@ header {
 
 .toggle-content.active {
     max-height: 2000px;
+}
+
+/* Category-Specific Colors */
+/* 하체 (Lower Body) - Green */
+.toggle-section:nth-child(1) {
+    border-color: rgba(123, 228, 149, 0.3);
+}
+
+.toggle-section:nth-child(1):hover {
+    border-color: var(--color-lower-body);
+    box-shadow: 0 12px 40px var(--color-lower-body-glow);
+}
+
+.toggle-section:nth-child(1) .toggle-header::before {
+    background: linear-gradient(180deg, var(--color-lower-body), #9DF3C4);
+}
+
+.toggle-section:nth-child(1) .toggle-header:hover {
+    background: linear-gradient(135deg, rgba(123, 228, 149, 0.15), rgba(157, 243, 196, 0.1));
+}
+
+.toggle-section:nth-child(1) .toggle-header.active {
+    background: linear-gradient(135deg, rgba(123, 228, 149, 0.2), rgba(157, 243, 196, 0.15));
+    box-shadow: inset 0 4px 20px var(--color-lower-body-glow);
+}
+
+.toggle-section:nth-child(1) .toggle-header.active span:first-child {
+    color: var(--color-lower-body);
+}
+
+.toggle-section:nth-child(1) .count {
+    background: linear-gradient(135deg, var(--color-lower-body), #9DF3C4);
+    box-shadow: 0 4px 15px var(--color-lower-body-glow);
+}
+
+/* 등 (Back) - Blue */
+.toggle-section:nth-child(2) {
+    border-color: rgba(107, 182, 255, 0.3);
+}
+
+.toggle-section:nth-child(2):hover {
+    border-color: var(--color-back);
+    box-shadow: 0 12px 40px var(--color-back-glow);
+}
+
+.toggle-section:nth-child(2) .toggle-header::before {
+    background: linear-gradient(180deg, var(--color-back), #9DC9FF);
+}
+
+.toggle-section:nth-child(2) .toggle-header:hover {
+    background: linear-gradient(135deg, rgba(107, 182, 255, 0.15), rgba(157, 201, 255, 0.1));
+}
+
+.toggle-section:nth-child(2) .toggle-header.active {
+    background: linear-gradient(135deg, rgba(107, 182, 255, 0.2), rgba(157, 201, 255, 0.15));
+    box-shadow: inset 0 4px 20px var(--color-back-glow);
+}
+
+.toggle-section:nth-child(2) .toggle-header.active span:first-child {
+    color: var(--color-back);
+}
+
+.toggle-section:nth-child(2) .count {
+    background: linear-gradient(135deg, var(--color-back), #9DC9FF);
+    box-shadow: 0 4px 15px var(--color-back-glow);
+}
+
+/* 가슴 (Chest) - Pink */
+.toggle-section:nth-child(3) {
+    border-color: rgba(255, 107, 157, 0.3);
+}
+
+.toggle-section:nth-child(3):hover {
+    border-color: var(--color-chest);
+    box-shadow: 0 12px 40px var(--color-chest-glow);
+}
+
+.toggle-section:nth-child(3) .toggle-header::before {
+    background: linear-gradient(180deg, var(--color-chest), #FFB3C6);
+}
+
+.toggle-section:nth-child(3) .toggle-header:hover {
+    background: linear-gradient(135deg, rgba(255, 107, 157, 0.15), rgba(255, 179, 198, 0.1));
+}
+
+.toggle-section:nth-child(3) .toggle-header.active {
+    background: linear-gradient(135deg, rgba(255, 107, 157, 0.2), rgba(255, 179, 198, 0.15));
+    box-shadow: inset 0 4px 20px var(--color-chest-glow);
+}
+
+.toggle-section:nth-child(3) .toggle-header.active span:first-child {
+    color: var(--color-chest);
+}
+
+.toggle-section:nth-child(3) .count {
+    background: linear-gradient(135deg, var(--color-chest), #FFB3C6);
+    box-shadow: 0 4px 15px var(--color-chest-glow);
+}
+
+/* 어깨 (Shoulder) - Orange */
+.toggle-section:nth-child(4) {
+    border-color: rgba(255, 184, 108, 0.3);
+}
+
+.toggle-section:nth-child(4):hover {
+    border-color: var(--color-shoulder);
+    box-shadow: 0 12px 40px var(--color-shoulder-glow);
+}
+
+.toggle-section:nth-child(4) .toggle-header::before {
+    background: linear-gradient(180deg, var(--color-shoulder), #FFD19B);
+}
+
+.toggle-section:nth-child(4) .toggle-header:hover {
+    background: linear-gradient(135deg, rgba(255, 184, 108, 0.15), rgba(255, 209, 155, 0.1));
+}
+
+.toggle-section:nth-child(4) .toggle-header.active {
+    background: linear-gradient(135deg, rgba(255, 184, 108, 0.2), rgba(255, 209, 155, 0.15));
+    box-shadow: inset 0 4px 20px var(--color-shoulder-glow);
+}
+
+.toggle-section:nth-child(4) .toggle-header.active span:first-child {
+    color: var(--color-shoulder);
+}
+
+.toggle-section:nth-child(4) .count {
+    background: linear-gradient(135deg, var(--color-shoulder), #FFD19B);
+    box-shadow: 0 4px 15px var(--color-shoulder-glow);
+}
+
+/* 팔 (Arms) - Purple */
+.toggle-section:nth-child(5) {
+    border-color: rgba(189, 147, 249, 0.3);
+}
+
+.toggle-section:nth-child(5):hover {
+    border-color: var(--color-arms);
+    box-shadow: 0 12px 40px var(--color-arms-glow);
+}
+
+.toggle-section:nth-child(5) .toggle-header::before {
+    background: linear-gradient(180deg, var(--color-arms), #D4BFFC);
+}
+
+.toggle-section:nth-child(5) .toggle-header:hover {
+    background: linear-gradient(135deg, rgba(189, 147, 249, 0.15), rgba(212, 191, 252, 0.1));
+}
+
+.toggle-section:nth-child(5) .toggle-header.active {
+    background: linear-gradient(135deg, rgba(189, 147, 249, 0.2), rgba(212, 191, 252, 0.15));
+    box-shadow: inset 0 4px 20px var(--color-arms-glow);
+}
+
+.toggle-section:nth-child(5) .toggle-header.active span:first-child {
+    color: var(--color-arms);
+}
+
+.toggle-section:nth-child(5) .count {
+    background: linear-gradient(135deg, var(--color-arms), #D4BFFC);
+    box-shadow: 0 4px 15px var(--color-arms-glow);
+}
+
+/* 기타 (Others) - Cyan */
+.toggle-section:nth-child(6) {
+    border-color: rgba(139, 233, 253, 0.3);
+}
+
+.toggle-section:nth-child(6):hover {
+    border-color: var(--color-others);
+    box-shadow: 0 12px 40px var(--color-others-glow);
+}
+
+.toggle-section:nth-child(6) .toggle-header::before {
+    background: linear-gradient(180deg, var(--color-others), #C4F5FE);
+}
+
+.toggle-section:nth-child(6) .toggle-header:hover {
+    background: linear-gradient(135deg, rgba(139, 233, 253, 0.15), rgba(196, 245, 254, 0.1));
+}
+
+.toggle-section:nth-child(6) .toggle-header.active {
+    background: linear-gradient(135deg, rgba(139, 233, 253, 0.2), rgba(196, 245, 254, 0.15));
+    box-shadow: inset 0 4px 20px var(--color-others-glow);
+}
+
+.toggle-section:nth-child(6) .toggle-header.active span:first-child {
+    color: var(--color-others);
+}
+
+.toggle-section:nth-child(6) .count {
+    background: linear-gradient(135deg, var(--color-others), #C4F5FE);
+    box-shadow: 0 4px 15px var(--color-others-glow);
 }
 
 /* Equipment List - Grid Layout */
