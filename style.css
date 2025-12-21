@@ -472,7 +472,8 @@ body::before {
 /* Mobile Optimization */
 @media (max-width: 768px) {
     .container {
-        padding: 1rem;
+        padding: 1rem 1.5rem;
+        /* Increased horizontal padding */
     }
 
     .page-title {
@@ -533,7 +534,8 @@ body::before {
     }
 
     .equipment-detail {
-        padding: 1.5rem;
+        padding: 1.5rem 2rem;
+        /* Increased horizontal padding */
     }
 }
 
@@ -835,8 +837,8 @@ body::before {
 /* Mobile Specific for Grid */
 @media (max-width: 768px) {
     .container {
-        padding: 9rem 1rem 2rem;
-        /* Increased from 5rem to avoid header overlap */
+        padding: 9rem 1.5rem 2rem;
+        /* Increased horizontal padding */
     }
 
     .hero-logo {
@@ -1195,8 +1197,18 @@ footer {
     }
 
     .steps-list li {
-        padding-left: 3rem;
-        font-size: 0.95rem;
+        padding: 0.9rem 1.2rem 0.9rem 3.2rem;
+        /* Increased horizontal padding */
+        font-size: 0.88rem;
+        /* Smaller font size */
+    }
+
+    .caution-item,
+    .tip-item {
+        padding: 1rem 1.5rem;
+        /* Increased horizontal padding */
+        font-size: 0.88rem;
+        /* Smaller font size */
     }
 
     .navigation-buttons {
