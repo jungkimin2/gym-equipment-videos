@@ -201,7 +201,7 @@ header {
 .hero-logo {
     max-width: 80%;
     height: auto;
-    max-height: 150px;
+    max-height: 200px;
     margin-bottom: 2rem;
     filter: drop-shadow(0 0 30px var(--primary-glow));
     transition: transform 0.3s ease;
