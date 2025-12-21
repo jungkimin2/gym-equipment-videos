@@ -1129,7 +1129,7 @@ footer {
 }
 
 /* Final Mobile Tweaks */
-@media (max-width: 480px) {
+@media (max-width: 768px) {
     .page-title h1 {
         font-size: 1.8rem;
     }
