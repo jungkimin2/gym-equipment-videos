@@ -974,6 +974,30 @@ body::before {
     box-shadow: 0 8px 30px rgba(123, 228, 149, 0.4);
 }
 
+/* Minimal Back Button */
+.btn-back {
+    padding: 0.5rem 1.2rem;
+    /* Much smaller */
+    font-size: 0.9rem;
+    background: transparent;
+    border: 1px solid var(--glass-border);
+    color: var(--text-secondary);
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.btn-back:hover {
+    background: rgba(123, 228, 149, 0.1);
+    border-color: var(--primary);
+    color: var(--primary);
+    transform: translateX(-5px);
+    /* Slide left on hover */
+}
+
 .navigation-buttons {
     display: flex;
     gap: 1rem;
@@ -1006,10 +1030,4 @@ footer {
 .footer-content a:hover {
     color: var(--secondary);
     text-shadow: 0 0 15px var(--primary-glow);
-
-    /* 단계 리스트 */
-    .steps-list li {
-        padding: 1.2rem;
-        padding-left: 3rem;
-        margin-bottom: 0.8rem;
-    }
+}
