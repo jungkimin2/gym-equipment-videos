@@ -1204,18 +1204,31 @@ footer {
     }
 
     .steps-list li {
-        padding: 0.9rem 1.2rem 0.9rem 3.2rem;
-        /* Increased horizontal padding */
-        font-size: 0.88rem;
+        padding: 0.75rem 1.5rem 0.75rem 2.8rem;
+        /* Reduced vertical, increased horizontal padding */
+        font-size: 0.8rem;
         /* Smaller font size */
+        line-height: 1.5;
+    }
+
+    .steps-list li::before {
+        width: 20px;
+        height: 20px;
+        /* Smaller circle */
+        font-size: 0.7rem;
+        /* Smaller number */
+        left: 0.8rem;
+        top: 0.75rem;
+        /* Adjusted position */
     }
 
     .caution-item,
     .tip-item {
-        padding: 1rem 1.5rem;
+        padding: 0.8rem 1.5rem;
         /* Increased horizontal padding */
-        font-size: 0.88rem;
+        font-size: 0.8rem;
         /* Smaller font size */
+        line-height: 1.5;
     }
 
     .navigation-buttons {
