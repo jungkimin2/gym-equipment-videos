@@ -176,12 +176,19 @@ header {
 .logo-text {
     font-family: 'NanumSquare Neo', sans-serif;
     font-size: 0.9rem;
-    color: #b0b0b0;
+    color: #e0fff4;
+    /* Pale mint white */
     margin-left: 0.8rem;
     font-weight: 700;
     letter-spacing: -0.5px;
     white-space: nowrap;
-    opacity: 0.9;
+    opacity: 1;
+
+    /* Neon Green Glow Effect */
+    text-shadow:
+        0 0 2px #fff,
+        0 0 5px var(--primary),
+        0 0 10px var(--primary-glow);
 }
 
 @media (max-width: 480px) {
