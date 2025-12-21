@@ -23,7 +23,6 @@
                     <li><a href="#" onclick="scrollToCategory('back'); return false;">등</a></li>
                     <li><a href="#" onclick="scrollToCategory('chest'); return false;">가슴</a></li>
                     <li><a href="#" onclick="scrollToCategory('shoulder'); return false;">어깨</a></li>
-                    <li><a href="#" onclick="scrollToCategory('arms'); return false;">팔</a></li>
                 </ul>
             </nav>
         </div>
@@ -54,7 +53,7 @@
                 <div class="toggle-section">
                     <button class="toggle-header" onclick="toggleCategory('back')">
                         <span><img src="images/toggle_icon.png" class="toggle-icon"> 등</span>
-                        <span class="count">11개</span>
+                        <span class="count">12개</span>
                     </button>
                     <div id="back-list" class="toggle-content">
                         <div class="equipment-list" id="back-items"></div>
@@ -65,7 +64,7 @@
                 <div class="toggle-section">
                     <button class="toggle-header" onclick="toggleCategory('chest')">
                         <span><img src="images/toggle_icon.png" class="toggle-icon"> 가슴</span>
-                        <span class="count">4개</span>
+                        <span class="count">6개</span>
                     </button>
                     <div id="chest-list" class="toggle-content">
                         <div class="equipment-list" id="chest-items"></div>
@@ -80,17 +79,6 @@
                     </button>
                     <div id="shoulder-list" class="toggle-content">
                         <div class="equipment-list" id="shoulder-items"></div>
-                    </div>
-                </div>
-
-                <!-- 팔 -->
-                <div class="toggle-section">
-                    <button class="toggle-header" onclick="toggleCategory('arms')">
-                        <span><img src="images/toggle_icon.png" class="toggle-icon"> 팔</span>
-                        <span class="count">3개</span>
-                    </button>
-                    <div id="arms-list" class="toggle-content">
-                        <div class="equipment-list" id="arms-items"></div>
                     </div>
                 </div>
 
@@ -176,6 +164,7 @@
 
     <script>
         let equipmentData = [];
+        let currentOpenCategory = null; // 현재 열려있는 카테고리 저장
 
         // JSON 데이터 로드
         // JSON 데이터 로드 (캐시 방지)
@@ -250,12 +239,30 @@
             // 현재 토글 열기/닫기
             content.classList.toggle('active');
             header.classList.toggle('active');
+
+            // 토글이 열렸으면 현재 카테고리 저장
+            if (content.classList.contains('active')) {
+                currentOpenCategory = categoryId;
+            } else {
+                currentOpenCategory = null;
+            }
         }
 
         // 기구 상세 표시
         function showEquipmentDetail(equipmentId) {
             const equipment = equipmentData.find(eq => eq.id === equipmentId);
             if (!equipment) return;
+
+            // 카테고리를 영어 ID로 변환하여 저장
+            const categoryMap = {
+                '하체': 'lower-body',
+                '등': 'back',
+                '가슴': 'chest',
+                '어깨': 'shoulder',
+                '팔': 'arms',
+                '기타': 'others'
+            };
+            currentOpenCategory = categoryMap[equipment.category];
 
             // URL 해시 업데이트 (NFC 태그 지원)
             window.location.hash = equipmentId;
@@ -267,7 +274,7 @@
 
             // 비디오
             const video = document.getElementById('detail-video');
-            video.src = '네오_고화질_1080p/' + equipment.video + '#t=0.001';
+            video.src = '네오_고화질_1080p/' + equipment.video + '?v=' + new Date().getTime() + '#t=0.001';
 
             // 운동 방법
             const stepsList = document.getElementById('detail-steps');
@@ -300,7 +307,15 @@
             window.location.hash = '';
             document.getElementById('home-view').style.display = 'block';
             document.getElementById('detail-view').style.display = 'none';
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            // 이전에 열어둔 카테고리가 있으면 해당 카테고리로 스크롤
+            if (currentOpenCategory) {
+                setTimeout(() => {
+                    scrollToCategory(currentOpenCategory);
+                }, 100);
+            } else {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
         }
 
         // 카테고리로 스크롤 및 열기
