@@ -1211,6 +1211,18 @@ footer {
         text-align: center;
     }
 
+    /* Icon Image Styling for Mobile Grid */
+    .equipment-icon-img {
+        width: 48px;
+        /* Optimal size for grid */
+        height: 48px;
+        object-fit: contain;
+        margin-bottom: 0.2rem;
+        filter: drop-shadow(0 0 5px rgba(32, 226, 215, 0.4));
+        /* Neon Glow */
+        transition: transform 0.3s ease;
+    }
+
     /* Remove Dividers */
     .equipment-item:last-child {
         border-bottom: 1px solid var(--glass-border) !important;
