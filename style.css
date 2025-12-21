@@ -787,7 +787,14 @@ body::before {
 /* Mobile Specific for Grid */
 @media (max-width: 768px) {
     .container {
-        padding: 5rem 1rem 2rem;
+        padding: 9rem 1rem 2rem;
+        /* Increased from 5rem to avoid header overlap */
+    }
+
+    .hero-logo {
+        max-height: 250px;
+        /* Limit logo height on mobile */
+        margin-bottom: 1rem;
     }
 
     .equipment-list {
