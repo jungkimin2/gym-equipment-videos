@@ -62,8 +62,15 @@ body::before {
 }
 
 @keyframes particleFloat {
-    0%, 100% { transform: translateY(0px) scale(1); }
-    50% { transform: translateY(-20px) scale(1.1); }
+
+    0%,
+    100% {
+        transform: translateY(0px) scale(1);
+    }
+
+    50% {
+        transform: translateY(-20px) scale(1.1);
+    }
 }
 
 /* Header - Glassmorphism */
@@ -89,18 +96,22 @@ header {
 }
 
 .logo {
-    font-size: 1.8rem;
-    font-weight: 800;
-    color: var(--primary);
+    display: flex;
+    align-items: center;
     text-decoration: none;
-    text-shadow: 0 0 20px var(--primary-glow);
     transition: all 0.3s ease;
-    letter-spacing: -0.5px;
 }
 
-.logo:hover {
+.logo-image {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 0 10px var(--primary-glow));
+}
+
+.logo:hover .logo-image {
     transform: scale(1.05);
-    text-shadow: 0 0 30px var(--primary-glow), 0 0 60px var(--primary-glow);
+    filter: drop-shadow(0 0 15px var(--primary-glow));
 }
 
 .nav-links {
@@ -178,21 +189,28 @@ header {
 }
 
 @keyframes shimmer {
-    0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
-    100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+    0% {
+        transform: translateX(-100%) translateY(-100%) rotate(45deg);
+    }
+
+    100% {
+        transform: translateX(100%) translateY(100%) rotate(45deg);
+    }
 }
 
-.page-title h1 {
-    font-size: 3.5rem;
-    font-weight: 900;
-    margin-bottom: 1rem;
-    background: linear-gradient(135deg, var(--primary), var(--secondary));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-shadow: 0 0 40px var(--primary-glow);
+.hero-logo {
+    max-width: 80%;
+    height: auto;
+    max-height: 150px;
+    margin-bottom: 2rem;
+    filter: drop-shadow(0 0 30px var(--primary-glow));
+    transition: transform 0.3s ease;
     position: relative;
     z-index: 1;
+}
+
+.hero-logo:hover {
+    transform: scale(1.02);
 }
 
 .page-title p {
@@ -609,6 +627,7 @@ header {
         opacity: 0;
         transform: translateY(30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -882,6 +901,7 @@ footer {
 
 /* Responsive Design - 모바일 최적화 */
 @media (max-width: 768px) {
+
     /* 헤더 */
     .header-container {
         flex-direction: column;
@@ -1067,6 +1087,7 @@ footer {
 
 /* 작은 모바일 (480px 이하) */
 @media (max-width: 480px) {
+
     /* 타이틀 */
     .page-title {
         padding: 1.5rem 1rem;
