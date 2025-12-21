@@ -312,7 +312,8 @@ nav::-webkit-scrollbar {
     height: auto;
     max-height: 400px;
     /* Greatly increased */
-    margin-bottom: 1rem;
+    margin: 0 auto 1rem auto;
+    /* Center horizontally */
     filter: drop-shadow(0 0 40px rgba(123, 228, 149, 0.4));
     transition: transform 0.3s ease;
     display: block;
@@ -329,6 +330,10 @@ nav::-webkit-scrollbar {
     letter-spacing: 1px;
     color: var(--text-secondary);
     text-transform: uppercase;
+    text-align: center;
+    /* Ensure text is centered */
+    margin: 0 auto;
+    width: 100%;
 }
 
 /* Toggles Container */
@@ -474,12 +479,22 @@ body::before {
         padding: 1.5rem 1rem;
         margin-bottom: 2rem;
         width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        /* Ensure perfect centering */
         border-radius: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* Center all children */
     }
 
     .hero-logo {
         max-height: 200px;
         /* Smaller for mobile */
+        margin-left: auto;
+        margin-right: auto;
+        /* Perfect center */
     }
 
     .header-container {
@@ -827,7 +842,8 @@ body::before {
     .hero-logo {
         max-height: 250px;
         /* Limit logo height on mobile */
-        margin-bottom: 1rem;
+        margin: 0 auto 1rem auto;
+        /* Perfect center with bottom margin */
     }
 
     .equipment-list {
