@@ -481,12 +481,10 @@ body::before {
     }
 
     .page-title {
-        padding: 1.5rem 1rem;
-        margin-bottom: 2rem;
-        width: 100%;
-        max-width: 90%;
+        padding: 1.5rem 0.5rem;
         margin: 0 auto 2rem auto;
         /* Perfect centering */
+        width: 100%;
         border-radius: 30px;
         display: flex;
         flex-direction: column;
@@ -540,8 +538,10 @@ body::before {
     }
 
     .equipment-detail {
-        padding: 1.5rem 2rem;
-        /* Increased horizontal padding */
+        padding: 1.5rem 0.8rem;
+        /* Reduced padding for full width content */
+        width: 100%;
+        box-sizing: border-box;
     }
 }
 
@@ -1227,6 +1227,14 @@ footer {
         /* Prevent wrapping */
         margin-left: 1rem;
         /* Space from title */
+    }
+
+    .section {
+        margin: 1.5rem 0;
+        padding: 0.8rem;
+        /* Reduced padding for more width */
+        width: 100%;
+        box-sizing: border-box;
     }
 
     .steps-list li {
