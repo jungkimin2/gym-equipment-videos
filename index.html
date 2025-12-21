@@ -187,6 +187,19 @@
             })
             .catch(error => console.error('데이터 로드 실패:', error));
 
+        // 카테고리별 아이콘 매핑
+        function getCategoryIcon(category) {
+            const icons = {
+                '하체': '🦵',   // Leg
+                '등': '🦅',     // Eagle (Back/Wings)
+                '가슴': '🦁',   // Lion (Chest)
+                '어깨': '🥥',   // Coconut (Shoulder slang)
+                '팔': '💪',     // Arm
+                '기타': '🔥'    // Fire/General
+            };
+            return icons[category] || '💪';
+        }
+
         // 카테고리별 기구 목록 렌더링
         function renderEquipmentLists() {
             const categories = {
@@ -206,7 +219,7 @@
                     const item = document.createElement('div');
                     item.className = 'equipment-item';
                     item.innerHTML = `
-                        <span class="equipment-icon">💪</span>
+                        <span class="equipment-icon">${getCategoryIcon(equipment.category)}</span>
                         <span class="equipment-name">${equipment.name}</span>
                     `;
                     item.onclick = () => showEquipmentDetail(equipment.id);
