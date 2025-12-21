@@ -1163,75 +1163,74 @@ footer {
         gap: 0.8rem;
     }
 
-    /*
-       MOBILE LIST VIEW REDESIGN - TRUE LIST GROUP
+    /* 
+       MOBILE GRID REDESIGN - 3 Column Layout
     */
     .equipment-list {
-        display: flex;
-        flex-direction: column;
-        gap: 0;
-        /* No gaps between items */
-        background: var(--glass-med);
-        border: 1px solid var(--glass-border);
-        border-radius: 24px;
-        overflow: hidden;
-        /* Clip children */
-        padding: 0;
-        /* Remove padding from container */
+        display: grid;
+        /* Back to Grid */
+        grid-template-columns: repeat(3, 1fr) !important;
+        /* Force 3 columns */
+        gap: 0.8rem;
+        background: transparent;
+        border: none;
+        border-radius: 0;
+        padding: 0 0.5rem;
+        /* Slight side padding */
         margin-top: 1rem;
     }
 
     .equipment-item {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
+        /* Icon Top, Text Bottom */
         align-items: center;
-        justify-content: flex-start;
+        justify-content: center;
         width: 100%;
-        padding: 1.2rem 1.5rem;
-        min-height: 70px;
-        gap: 1rem;
+        padding: 1rem 0.5rem;
+        /* Compact padding */
+        min-height: 100px;
+        /* Square-ish aspect ratio */
+        gap: 0.6rem;
 
-        /* Remove individual card styling */
-        background: transparent !important;
-        border: none !important;
-        border-radius: 0 !important;
+        /* Restore Card Styling */
+        background: var(--glass-med) !important;
+        border: 1px solid var(--glass-border) !important;
+        border-radius: 16px !important;
         box-shadow: none !important;
         margin: 0 !important;
-
-        /* Add Divider */
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+        text-align: center;
     }
 
-    /* Remove divider for last item */
+    /* Remove Dividers */
     .equipment-item:last-child {
-        border-bottom: none !important;
+        border-bottom: 1px solid var(--glass-border) !important;
     }
 
     .equipment-item:active {
-        background: rgba(255, 255, 255, 0.05) !important;
-        transform: none !important;
+        transform: scale(0.96) !important;
+        background: var(--glass-high) !important;
     }
 
     .equipment-icon {
-        font-size: 1.6rem;
+        font-size: 2rem;
+        /* Larger icon for grid focus */
         margin: 0;
     }
 
     .equipment-name {
-        font-size: 1.1rem;
-        flex-grow: 1;
-        text-align: left;
+        font-size: 0.85rem;
+        /* Smaller text to fit */
+        flex-grow: 0;
+        text-align: center;
         font-weight: 700;
+        word-break: keep-all;
+        /* Prevent awkward breaks */
+        line-height: 1.3;
     }
 
-    /* Chevron Arrow */
+    /* Remove Chevron */
     .equipment-item::after {
-        content: "›";
-        font-family: serif;
-        font-size: 1.8rem;
-        color: var(--glass-border);
-        font-weight: 300;
-        line-height: 0;
-        margin-top: -3px;
+        display: none;
     }
 }
