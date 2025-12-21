@@ -243,7 +243,7 @@
             // 상세 정보 업데이트
             document.getElementById('detail-name').textContent = equipment.name;
             document.getElementById('detail-target').textContent = `🎯 ${equipment.target}`;
-            document.getElementById('detail-sets').textContent = `📊 ${equipment.sets}`;
+            document.getElementById('detail-sets').innerHTML = `${equipment.sets}`;
 
             // 비디오
             const video = document.getElementById('detail-video');

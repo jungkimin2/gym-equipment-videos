@@ -864,19 +864,50 @@ body::before {
     margin: 1rem 0;
 }
 
+.equipment-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 1.5rem;
+    /* Increased gap for better mobile touch */
+    padding: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .equipment-list {
+        grid-template-columns: 1fr;
+        padding: 1rem 0;
+        gap: 1.5rem;
+        /* Ensure gap is consistent on mobile */
+    }
+}
+
+/* Level Colors */
+.level-beginner {
+    color: #00ff88;
+    /* Mint Green */
+    font-weight: 800;
+}
+
+.level-advanced {
+    color: #00ccff;
+    /* Cyan Blue */
+    font-weight: 800;
+}
+
 .sets-info {
     display: inline-block;
-    background: linear-gradient(135deg, rgba(123, 228, 149, 0.2), rgba(157, 243, 196, 0.15));
-    padding: 0.8rem 2rem;
-    border-radius: 25px;
-    margin-top: 1rem;
     background: var(--glass-low);
-    padding: 0.6rem 1.5rem;
+    padding: 1rem 1.5rem;
+    /* Increased padding */
     border-radius: 20px;
     font-weight: 700;
-    font-size: 0.95rem;
+    font-size: 1rem;
     border: 1px solid var(--glass-border);
-    color: var(--primary);
+    color: var(--text-main);
+    line-height: 1.6;
+    text-align: left;
+    width: 100%;
+    /* Full width on mobile for better reading */
 }
 
 /* Video Container - Cinematic */
