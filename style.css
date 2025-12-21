@@ -1171,13 +1171,14 @@ footer {
         /* Back to Grid */
         grid-template-columns: repeat(3, 1fr) !important;
         /* Force 3 columns */
-        gap: 0.8rem;
+        gap: 1rem;
+        /* More space between items */
         background: transparent;
         border: none;
         border-radius: 0;
-        padding: 0 0.5rem;
-        /* Slight side padding */
-        margin-top: 1rem;
+        padding: 0.5rem 1rem 1.5rem;
+        /* More container padding (Top, Side, Bottom) */
+        margin-top: 0.5rem;
     }
 
     .equipment-item {
@@ -1187,16 +1188,17 @@ footer {
         align-items: center;
         justify-content: center;
         width: 100%;
-        padding: 1rem 0.5rem;
-        /* Compact padding */
-        min-height: 100px;
-        /* Square-ish aspect ratio */
-        gap: 0.6rem;
+        padding: 0.8rem 0.3rem;
+        /* Tighter internal padding */
+        min-height: 90px;
+        /* Slightly smaller height */
+        gap: 0.5rem;
 
         /* Restore Card Styling */
         background: var(--glass-med) !important;
         border: 1px solid var(--glass-border) !important;
-        border-radius: 16px !important;
+        border-radius: 14px !important;
+        /* Slightly smaller radius */
         box-shadow: none !important;
         margin: 0 !important;
         text-align: center;
