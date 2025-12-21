@@ -187,17 +187,17 @@
             })
             .catch(error => console.error('데이터 로드 실패:', error));
 
-        // 카테고리별 아이콘 매핑
-        function getCategoryIcon(category) {
+        // 카테고리별 아이콘 매핑 (이미지 경로 반환)
+        function getCategoryIconPath(category) {
             const icons = {
-                '하체': '🦵',   // Leg
-                '등': '🦅',     // Eagle (Back/Wings)
-                '가슴': '🦁',   // Lion (Chest)
-                '어깨': '🥥',   // Coconut (Shoulder slang)
-                '팔': '💪',     // Arm
-                '기타': '🔥'    // Fire/General
+                '하체': 'images/icon_lower_body.png',
+                '등': 'images/icon_back.png',
+                '가슴': 'images/icon_chest.png',
+                '어깨': 'images/icon_shoulder.png',
+                '팔': 'images/icon_arms.png',
+                '기타': 'images/icon_others.png'
             };
-            return icons[category] || '💪';
+            return icons[category] || 'images/icon_arms.png'; // Fallback
         }
 
         // 카테고리별 기구 목록 렌더링
@@ -219,7 +219,7 @@
                     const item = document.createElement('div');
                     item.className = 'equipment-item';
                     item.innerHTML = `
-                        <span class="equipment-icon">${getCategoryIcon(equipment.category)}</span>
+                        <img src="${getCategoryIconPath(equipment.category)}" alt="${equipment.category}" class="equipment-icon-img">
                         <span class="equipment-name">${equipment.name}</span>
                     `;
                     item.onclick = () => showEquipmentDetail(equipment.id);
