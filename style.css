@@ -173,6 +173,32 @@ header {
     transform: scale(0.95);
 }
 
+.logo-text {
+    font-family: 'NanumSquare Neo', sans-serif;
+    font-size: 0.9rem;
+    color: #b0b0b0;
+    margin-left: 0.8rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    white-space: nowrap;
+    opacity: 0.9;
+}
+
+@media (max-width: 480px) {
+    .logo-text {
+        font-size: 0.75rem;
+        /* Smaller on mobile */
+        margin-left: 0.5rem;
+        display: none;
+        /* Hide on very small screens if meaningful, or keep if user insists. 
+                        User likely wants it visible. Let's keep it but small, or maybe hide.
+                        Given "Nano Future" simplistic mobile header, text might clutter.
+                        Let's try hiding it on strictly < 480px (phones) or maybe < 360px.
+                        Actually, let's keep it visible but very small for now as requested. */
+        display: inline-block;
+    }
+}
+
 /* Scrollable Nav for Mobile */
 nav {
     overflow-x: auto;
