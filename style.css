@@ -472,29 +472,35 @@ body::before {
 /* Mobile Optimization */
 @media (max-width: 768px) {
     .container {
-        padding: 1rem 1.5rem;
-        /* Increased horizontal padding */
-    }
-
-    .page-title {
-        padding: 1.5rem 1rem;
-        margin-bottom: 2rem;
-        width: 90%;
-        margin-left: auto;
-        margin-right: auto;
-        /* Ensure perfect centering */
-        border-radius: 30px;
+        padding: 1rem;
+        /* Equal padding */
         display: flex;
         flex-direction: column;
         align-items: center;
         /* Center all children */
     }
 
+    .page-title {
+        padding: 1.5rem 1rem;
+        margin-bottom: 2rem;
+        width: 100%;
+        max-width: 90%;
+        margin: 0 auto 2rem auto;
+        /* Perfect centering */
+        border-radius: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        /* Center all children */
+        text-align: center;
+    }
+
     .hero-logo {
         max-height: 200px;
         /* Smaller for mobile */
-        margin-left: auto;
-        margin-right: auto;
+        margin: 0 auto;
+        display: block;
         /* Perfect center */
     }
 
@@ -837,14 +843,15 @@ body::before {
 /* Mobile Specific for Grid */
 @media (max-width: 768px) {
     .container {
-        padding: 9rem 1.5rem 2rem;
-        /* Increased horizontal padding */
+        padding: 9rem 1rem 2rem;
+        /* Equal horizontal padding */
     }
 
     .hero-logo {
         max-height: 250px;
         /* Limit logo height on mobile */
         margin: 0 auto 1rem auto;
+        display: block;
         /* Perfect center with bottom margin */
     }
 
