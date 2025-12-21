@@ -1211,6 +1211,20 @@ footer {
         text-align: center;
     }
 
+    /* Icon Image Styling Global */
+    .equipment-icon-img {
+        width: 60px;
+        height: 60px;
+        object-fit: contain;
+        margin-bottom: 0.5rem;
+
+        /* Transparent Background Trick */
+        mix-blend-mode: screen;
+        filter: drop-shadow(0 0 8px rgba(32, 226, 215, 0.8)) brightness(1.2);
+
+        transition: transform 0.3s ease;
+    }
+
     /* Icon Image Styling for Mobile Grid */
     .equipment-icon-img {
         width: 45px !important;
