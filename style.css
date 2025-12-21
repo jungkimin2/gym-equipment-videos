@@ -58,18 +58,36 @@
 body {
     font-family: 'NanumSquareNeo', sans-serif;
     background-color: var(--dark-bg);
-    background-image:
-        radial-gradient(circle at 10% 20%, rgba(32, 226, 215, 0.08) 0%, transparent 40%),
-        radial-gradient(circle at 90% 80%, rgba(123, 228, 149, 0.08) 0%, transparent 40%);
     color: var(--text-main);
     line-height: 1.5;
     min-height: 100vh;
     overflow-x: hidden;
     font-weight: 400;
-    /* Normal weight base */
+    position: relative;
+    /* Mesh Gradient Background */
+    background:
+        radial-gradient(circle at 15% 50%, rgba(32, 226, 215, 0.15), transparent 25%),
+        radial-gradient(circle at 85% 30%, rgba(123, 228, 149, 0.15), transparent 25%),
+        radial-gradient(circle at 50% 80%, rgba(157, 243, 196, 0.1), transparent 40%);
+    background-size: 200% 200%;
+    animation: meshFlow 15s ease infinite alternate;
 }
 
-/* Animated Background Particles */
+/* Noise Texture Overlay */
+body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0.4;
+}
+
+/* Floating Orbs Animation - Replaces Particle Float */
 body::before {
     content: '';
     position: fixed;
@@ -77,24 +95,37 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image:
-        radial-gradient(circle at 20% 30%, rgba(123, 228, 149, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 70%, rgba(157, 243, 196, 0.08) 0%, transparent 50%),
-        radial-gradient(circle at 50% 50%, rgba(123, 228, 149, 0.05) 0%, transparent 50%);
-    animation: particleFloat 20s ease-in-out infinite;
-    pointer-events: none;
-    z-index: 0;
+    background:
+        radial-gradient(circle at 50% 50%, rgba(32, 226, 215, 0.05) 0%, transparent 60%);
+    z-index: -2;
+    animation: pulseGlow 8s ease-in-out infinite;
 }
 
-@keyframes particleFloat {
-
-    0%,
-    100% {
-        transform: translateY(0px) scale(1);
+@keyframes meshFlow {
+    0% {
+        background-position: 0% 50%;
     }
 
     50% {
-        transform: translateY(-20px) scale(1.1);
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes pulseGlow {
+
+    0%,
+    100% {
+        opacity: 0.5;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.1);
     }
 }
 
