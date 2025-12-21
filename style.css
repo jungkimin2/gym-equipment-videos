@@ -1213,11 +1213,13 @@ footer {
 
     /* Icon Image Styling for Mobile Grid */
     .equipment-icon-img {
-        width: 48px;
-        /* Optimal size for grid */
-        height: 48px;
+        width: 45px !important;
+        /* Force specific width */
+        height: 45px !important;
+        max-width: 100%;
+        /* Prevent overflow */
         object-fit: contain;
-        margin-bottom: 0.2rem;
+        margin-bottom: 0.3rem;
         filter: drop-shadow(0 0 5px rgba(32, 226, 215, 0.4));
         /* Neon Glow */
         transition: transform 0.3s ease;
