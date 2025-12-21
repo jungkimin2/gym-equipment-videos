@@ -192,10 +192,9 @@ nav::-webkit-scrollbar {
 
 /* Container */
 .container {
-    max-width: 1400px;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 3rem 2rem;
+    padding: 12rem 1.5rem 2rem;
     position: relative;
     z-index: 1;
 }
