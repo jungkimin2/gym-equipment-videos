@@ -17,12 +17,12 @@
             </a>
             <nav>
                 <ul class="nav-links">
-                    <li><a href="#" onclick="showHome()">홈</a></li>
-                    <li><a href="#lower-body">하체</a></li>
-                    <li><a href="#back">등</a></li>
-                    <li><a href="#chest">가슴</a></li>
-                    <li><a href="#shoulder">어깨</a></li>
-                    <li><a href="#arms">팔</a></li>
+                    <li><a href="#" onclick="showHome(); return false;">홈</a></li>
+                    <li><a href="#" onclick="scrollToCategory('lower-body'); return false;">하체</a></li>
+                    <li><a href="#" onclick="scrollToCategory('back'); return false;">등</a></li>
+                    <li><a href="#" onclick="scrollToCategory('chest'); return false;">가슴</a></li>
+                    <li><a href="#" onclick="scrollToCategory('shoulder'); return false;">어깨</a></li>
+                    <li><a href="#" onclick="scrollToCategory('arms'); return false;">팔</a></li>
                 </ul>
             </nav>
         </div>
@@ -281,6 +281,34 @@
             document.getElementById('home-view').style.display = 'block';
             document.getElementById('detail-view').style.display = 'none';
             window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // 카테고리로 스크롤 및 열기
+        function scrollToCategory(categoryId) {
+            // 상세 화면에서 홈으로 돌아오기
+            if (document.getElementById('home-view').style.display === 'none') {
+                showHome();
+            }
+
+            const content = document.getElementById(`${categoryId}-list`);
+            const header = content.previousElementSibling;
+
+            // 닫혀있으면 열기
+            if (!content.classList.contains('active')) {
+                toggleCategory(categoryId);
+            }
+
+            // 스크롤 (헤더 높이 고려)
+            setTimeout(() => {
+                const headerHeight = document.querySelector('header').offsetHeight;
+                const elementPosition = header.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerHeight - 20;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            }, 100);
         }
 
         // URL 해시 변경 처리 (NFC 태그 지원)
