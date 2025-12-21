@@ -1146,4 +1146,20 @@ footer {
     .navigation-buttons {
         justify-content: center;
     }
+
+    /* Refined Mobile Spacing & Text */
+    .step-item {
+        padding: 0.8rem;
+        font-size: 0.95rem;
+    }
+
+    .sets-info {
+        padding: 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    .equipment-item {
+        padding: 1rem;
+        gap: 0.8rem;
+    }
 }

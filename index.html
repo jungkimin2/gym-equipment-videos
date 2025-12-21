@@ -177,7 +177,8 @@
         let equipmentData = [];
 
         // JSON 데이터 로드
-        fetch('equipment_data.json')
+        // JSON 데이터 로드 (캐시 방지)
+        fetch('equipment_data.json?v=' + new Date().getTime())
             .then(response => response.json())
             .then(data => {
                 equipmentData = data.equipment;
