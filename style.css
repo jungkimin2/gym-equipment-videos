@@ -184,11 +184,11 @@ header {
     white-space: nowrap;
     opacity: 1;
 
-    /* Neon Green Glow Effect */
+    /* Neon Green Glow Effect - Reduced Brightness */
     text-shadow:
-        0 0 2px #fff,
-        0 0 5px var(--primary),
-        0 0 10px var(--primary-glow);
+        0 0 1px #fff,
+        0 0 3px var(--primary),
+        0 0 5px rgba(32, 226, 215, 0.5);
 }
 
 @media (max-width: 480px) {
