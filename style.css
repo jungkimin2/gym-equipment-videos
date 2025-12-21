@@ -1218,9 +1218,8 @@ footer {
         object-fit: contain;
         margin-bottom: 0.5rem;
 
-        /* Transparent Background Trick */
-        mix-blend-mode: screen;
-        filter: drop-shadow(0 0 8px rgba(32, 226, 215, 0.8)) brightness(1.2);
+        /* Transparent PNGs */
+        filter: drop-shadow(0 0 5px rgba(32, 226, 215, 0.4));
 
         transition: transform 0.3s ease;
     }
@@ -1233,9 +1232,8 @@ footer {
         object-fit: contain;
         margin-bottom: 0.3rem;
 
-        /* Transparent Background Trick */
-        mix-blend-mode: screen;
-        filter: drop-shadow(0 0 5px rgba(32, 226, 215, 0.8)) brightness(1.2);
+        /* Transparent PNGs */
+        filter: drop-shadow(0 0 5px rgba(32, 226, 215, 0.6));
 
         transition: transform 0.3s ease;
     }
