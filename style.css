@@ -1162,4 +1162,55 @@ footer {
         padding: 1rem;
         gap: 0.8rem;
     }
+
+    /* 
+       MOBILE LIST VIEW REDESIGN 
+       Transforms grid cards into clickable list rows
+    */
+    .equipment-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+
+    .equipment-item {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        width: 100%;
+        padding: 1rem 1.2rem;
+        min-height: 70px;
+        /* Reduced height for list feel */
+        gap: 1rem;
+        border-radius: 16px;
+        /* Slightly less rounded */
+    }
+
+    .equipment-icon {
+        font-size: 1.8rem;
+        /* Smaller icon */
+        margin-right: 0;
+        margin-bottom: 0;
+    }
+
+    .equipment-name {
+        font-size: 1.05rem;
+        flex-grow: 1;
+        /* Push arrow to the right */
+        text-align: left;
+    }
+
+    /* Chevron Arrow for Affordance */
+    .equipment-item::after {
+        content: "›";
+        font-family: serif;
+        /* For a classic arrow look, or use standard sans */
+        font-size: 2rem;
+        color: var(--glass-border);
+        font-weight: 300;
+        line-height: 0;
+        margin-top: -5px;
+        /* Visual alignment */
+    }
 }
