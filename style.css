@@ -65,11 +65,13 @@ body {
     font-weight: 400;
     position: relative;
     /* Mesh Gradient Background */
-    background:
+    background-image:
         radial-gradient(circle at 15% 50%, rgba(32, 226, 215, 0.15), transparent 25%),
         radial-gradient(circle at 85% 30%, rgba(123, 228, 149, 0.15), transparent 25%),
         radial-gradient(circle at 50% 80%, rgba(157, 243, 196, 0.1), transparent 40%);
     background-size: 200% 200%;
+    background-attachment: fixed;
+    /* Fix background during scroll */
     animation: meshFlow 15s ease infinite alternate;
 }
 
