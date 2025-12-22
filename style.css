@@ -515,12 +515,8 @@ body::before {
     }
 
     .hero-logo {
-        max-height: 200px;
-        /* Smaller for mobile */
-        margin: 0 auto;
-        display: block;
-        /* Perfect center */
-        width: auto;
+        display: none;
+        /* Hide logo on mobile */
     }
 
     .header-container {
