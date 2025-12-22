@@ -268,9 +268,10 @@ nav::-webkit-scrollbar {
 /* Page Title - Compact & Futuristic */
 .page-title {
     text-align: center;
-    margin-bottom: 3rem;
-    padding: 1.5rem;
-    /* Reduced padding */
+    margin-bottom: 1.5rem;
+    /* Reduced from 3rem */
+    padding: 0.5rem 1.5rem;
+    /* Reduced top/bottom padding */
     width: fit-content;
     /* Shrink to fit content */
     margin-left: auto;
@@ -483,9 +484,10 @@ body::before {
     }
 
     .page-title {
-        padding: 1.5rem 1rem;
-        margin: 0 auto 2rem auto;
-        /* Perfect centering */
+        padding: 0.5rem 1rem;
+        /* Reduced top/bottom padding */
+        margin: 0 auto 1rem auto;
+        /* Reduced bottom margin */
         width: fit-content;
         /* Shrink to content */
         max-width: 95%;
@@ -1076,8 +1078,8 @@ body::before {
 }
 
 .toggle-section {
-    margin-bottom: 2rem;
-    /* Increased spacing between category toggles */
+    margin-bottom: 1rem;
+    /* Reduced spacing between category toggles */
     border-radius: 24px;
     background: var(--glass-med);
     border: 1px solid var(--glass-border);
