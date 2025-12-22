@@ -270,8 +270,8 @@ nav::-webkit-scrollbar {
     text-align: center;
     margin-bottom: 0;
     /* No bottom margin */
-    margin-top: -7rem;
-    /* Very strong negative top margin to move up */
+    margin-top: -11rem;
+    /* Extreme negative top margin to move up */
     padding: 0 1.5rem;
     /* Remove top/bottom padding */
     width: fit-content;
@@ -488,8 +488,8 @@ body::before {
     .page-title {
         padding: 0 1rem;
         /* Remove top/bottom padding */
-        margin: -6rem auto 0 auto;
-        /* Very strong negative top margin, no bottom margin */
+        margin: -9rem auto 0 auto;
+        /* Extreme negative top margin, no bottom margin */
         width: fit-content;
         /* Shrink to content */
         max-width: 95%;
