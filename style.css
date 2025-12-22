@@ -1082,6 +1082,8 @@ body::before {
 .toggle-section {
     margin-bottom: 1rem;
     /* Reduced spacing between category toggles */
+    margin-top: -2rem;
+    /* Move toggles up */
     border-radius: 24px;
     background: var(--glass-med);
     border: 1px solid var(--glass-border);
