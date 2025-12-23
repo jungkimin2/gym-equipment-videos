@@ -494,6 +494,11 @@ body::before {
         overflow: hidden !important;
     }
 
+    .toggle-section:first-child {
+        margin-top: 3rem !important;
+        /* Add space from header on mobile */
+    }
+
     .hero-logo {
         display: none !important;
         /* Force hide logo on mobile */
