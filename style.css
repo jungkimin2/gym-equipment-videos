@@ -486,32 +486,12 @@ body::before {
     }
 
     .page-title {
-        padding: 0 1rem;
-        /* Remove top/bottom padding */
-        margin: -9rem auto 0 auto;
-        /* Extreme negative top margin, no bottom margin */
-        width: fit-content;
-        /* Shrink to content */
-        max-width: 95%;
-        /* Prevent overflow */
-        border-radius: 0;
-        /* No border radius */
-        background: transparent;
-        /* No background on mobile */
-        border: none;
-        box-shadow: none;
-        backdrop-filter: none;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        /* Center all children */
-        text-align: center;
-        position: relative;
-        left: 0;
-        right: 0;
-        transform: translateX(0);
-        /* Reset any transforms */
+        display: none !important;
+        /* Completely hide on mobile */
+        visibility: hidden !important;
+        opacity: 0 !important;
+        height: 0 !important;
+        overflow: hidden !important;
     }
 
     .hero-logo {
