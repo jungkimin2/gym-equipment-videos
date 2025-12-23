@@ -515,8 +515,13 @@ body::before {
     }
 
     .hero-logo {
-        display: none;
-        /* Hide logo on mobile */
+        display: none !important;
+        /* Force hide logo on mobile */
+        visibility: hidden !important;
+        opacity: 0 !important;
+        height: 0 !important;
+        max-height: 0 !important;
+        overflow: hidden !important;
     }
 
     .header-container {
